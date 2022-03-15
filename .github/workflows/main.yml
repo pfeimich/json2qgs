@@ -38,10 +38,10 @@ jobs:
           cd tests/docker
           docker-compose up -d
 
-      - name: Setting up python 3.6
+      - name: Setting up python 3.9
         uses: actions/setup-python@v2
         with:
-            python-version: '3.6'
+            python-version: '3.9'
 
       - name: Run unittests
         run: |
