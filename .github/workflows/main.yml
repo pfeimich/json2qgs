@@ -68,9 +68,6 @@ jobs:
           tag_name: ${{ steps.get_version.outputs.VERSION }}
           draft: false
 
-      outputs:
-        
-
     build:
        needs: release
        runs-on: ubuntu-latest, "${{ release.steps.get_version.outputs.VERSION }}"
