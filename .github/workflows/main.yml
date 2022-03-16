@@ -67,7 +67,7 @@ jobs:
           release_name: ${{ steps.get_version.outputs.VERSION }}
           tag_name: ${{ steps.get_version.outputs.VERSION }}
           draft: false
-      output:
+      outputs:
         VERSION: ${{ steps.get_version.outputs.VERSION }}
 
     build:
