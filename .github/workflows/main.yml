@@ -52,7 +52,7 @@ jobs:
     release:
       needs: test
       runs-on: ubuntu-latest
-      if: github.event_name == 'push'
+      if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
       steps:
 
       - name: Get the version from tag
