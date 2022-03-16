@@ -72,7 +72,7 @@ jobs:
 
     build:
        needs: release
-       runs-on: ubuntu-latest, "${{ release.steps.get_version.outputs.VERSION }}"
+       runs-on: ubuntu-latest
        steps:
 
        - name: Checkout
@@ -93,4 +93,4 @@ jobs:
            context: .
            file: ./Dockerfile
            push: true
-           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/json2qgs:${{ release.steps.get_version.outputs.VERSION }}
+           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/json2qgs:${{ needs.release.outputs.VERSION }}
